@@ -1,11 +1,11 @@
 ﻿using Microsoft.Azure.Devices.Client;
 using SharedLibraries.Models;
+using SharedLibraries.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UWP_Uppgift4.Services;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -36,9 +36,9 @@ namespace UWP_Uppgift4
 
         private static readonly DeviceClient deviceClient = DeviceClient.CreateFromConnectionString(_conn, TransportType.Mqtt);
 
+       
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             DeviceService.SendMessageAsync(deviceClient).GetAwaiter();
         }
