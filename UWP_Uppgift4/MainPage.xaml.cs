@@ -28,6 +28,7 @@ namespace UWP_Uppgift4
         public MainPage()
         {
 
+
             this.InitializeComponent();
 
         }
